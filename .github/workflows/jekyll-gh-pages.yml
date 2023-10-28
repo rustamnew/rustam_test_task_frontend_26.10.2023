@@ -28,8 +28,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: cd test_task
-        run: cd test_task
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set up Node

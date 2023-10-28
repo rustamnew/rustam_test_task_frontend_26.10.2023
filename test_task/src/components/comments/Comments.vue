@@ -13,7 +13,7 @@ import AddComment from './AddComment.vue';
     </div>
     
 
-    <div class="list" :class="{active: this.expanded}">
+    <div class="list" :class="{active: expanded}">
         <ItemComment v-for="item in commentStore.comments[post_id]" 
         :comment_id="item.id" 
         :email="item.email" 
@@ -22,7 +22,7 @@ import AddComment from './AddComment.vue';
         :mode="'post-comment'"/>
     </div>
 
-    <div class="add-comment" :class="{active: this.expanded}">
+    <div class="add-comment" :class="{active: expanded}">
         <AddComment :post_id="post_id"/>
     </div>
     

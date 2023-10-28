@@ -23,7 +23,7 @@ import {useUserStore} from '../../stores/userStore';
     </div>
     
 
-    <ItemPost v-for="item in this.postStore.user_posts"
+    <ItemPost v-for="item in postStore.user_posts"
         :title="item.title"
         :body="item.body"
         :id="item.id"
@@ -32,7 +32,7 @@ import {useUserStore} from '../../stores/userStore';
 </div>
 <div class="post-list" v-if="userStore.show_user_posts == false" >
 
-    <ItemPost v-for="item in this.postStore.posts_pages.sorted"
+    <ItemPost v-for="item in postStore.posts_pages.sorted"
         :title="item.title"
         :body="item.body"
         :id="item.id"

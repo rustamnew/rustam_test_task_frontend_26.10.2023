@@ -3,6 +3,7 @@
     import AddComment from '../comments/AddComment.vue'
     import Users from '../users/Users.vue'
     import ItemUser from '../users/ItemUser.vue'
+    import imgUrl from './empty_large.jpg'
 </script>
 
 <template>
@@ -18,7 +19,7 @@
     
     <div class="preview">
         <!-- Заглушка, если вдруг захотим в будущем добавить превью, закомментировать при необходимости -->
-        <img :src="'src/assets/images/empty_large.jpg'" alt="image_sample">
+        <img :src="imgUrl" alt="image_sample">
     </div>
 
     <p class="text"> {{ body }}</p>

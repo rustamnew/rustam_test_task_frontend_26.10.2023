@@ -12,7 +12,7 @@ import {useCommentStore} from '../../stores/commentStore'
         <input placeholder="Email" type="email" :name="'comment_email_' + post_id">
         <textarea placeholder="Комментарий"  :name="'comment_text_' + post_id" class="add-comment-textarea"></textarea>
 
-        <button class="send-comment" @click="addComment(this.post_id)">Отправить</button>
+        <button class="send-comment" @click="addComment(post_id)">Отправить</button>
     </div>
     
 </template>
@@ -41,7 +41,7 @@ import {useCommentStore} from '../../stores/commentStore'
                 let email_input_value = document.querySelector(`[name="comment_email_${post_id}"]`).value
                 let text_input_value = document.querySelector(`[name="comment_text_${post_id}"]`).value
 
-                this.commentStore.addCommentToPost(this.post_id, {
+                this.commentStore.addCommentToPost(post_id, {
                     name_input_value,
                     email_input_value,
                     text_input_value,

@@ -82,11 +82,6 @@
         justify-content: flex-start;
         
         width: 100%;
-        /*height: 100vh;
-
-        //height: 100%;
-        overflow-y: auto;*/
-        
 
         .tabs-buttons {
             position: fixed;

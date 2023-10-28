@@ -28,13 +28,11 @@ import {useCommentStore} from '../../stores/commentStore'
 
             return {
                 commentStore
-                //posts: []
             }
         },
 
         mounted() {
-            //console.log(this.name)
-            
+
         },
 
         methods: {

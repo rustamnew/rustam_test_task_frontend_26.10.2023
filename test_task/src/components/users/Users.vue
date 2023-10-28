@@ -40,7 +40,6 @@ import ItemUser from './ItemUser.vue';
 
             return {
                 userStore
-                //posts: []
             }
         },
 

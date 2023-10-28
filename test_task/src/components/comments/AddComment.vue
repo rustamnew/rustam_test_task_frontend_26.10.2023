@@ -60,14 +60,14 @@ import {useCommentStore} from '../../stores/commentStore'
     width: 100%;
 
     .subtitle {
-        /*width: 100%;*/
+
         text-align: center;
         margin-bottom: 0.5rem;
     }
 
     .add-comment-textarea {
         width: 50%;
-        /*margin-right: 1rem;*/
+
     }
 
     input,

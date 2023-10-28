@@ -8,15 +8,7 @@ export const useCommentStore = defineStore('comment', {
         
         return {
             loading: useLoadingStore(),
-            comments: {
-                /*
-                [post_id]: [
-                    {
-                        ..commentdata..
-                    }
-                ]
-                */ 
-            }
+            comments: {}
         }
     },
 
@@ -27,15 +19,11 @@ export const useCommentStore = defineStore('comment', {
                 .then(response => response.json())
                 .then(data => {
                     this.comments[post_id] = data
-                    //console.log(this.comments)
                     this.loading.loadingHide()
             });
         },
 
         async addCommentToPost(post_id, obj) {
-            console.log(post_id)
-            console.log(obj)
-
             await fetch('https://jsonplaceholder.typicode.com/comments', {
                 method: 'POST',
                 body: JSON.stringify({

@@ -55,7 +55,6 @@ export const usePostStore = defineStore('post', {
                     })
 
                     this.posts_pages.sorted = this.posts_pages[1]
-                    console.log(this.posts_pages)
                     loading.loadingHide()
                 });
 
@@ -73,7 +72,6 @@ export const usePostStore = defineStore('post', {
         },
         
         async loadUserPosts(user_id) {
-            console.log(user_id)
             let loading = useLoadingStore()
 
             loading.loadingShow()
@@ -82,7 +80,6 @@ export const usePostStore = defineStore('post', {
                 .then(response => response.json())
                 .then(data => {
                     this.user_posts = data
-                    console.log(this.user_posts)
                     loading.loadingHide()
                 });
 

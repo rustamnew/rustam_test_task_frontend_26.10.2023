@@ -35,9 +35,10 @@
 
 
             onScroll () {
-
-                if ( window.innerHeight + Math.round(window.scrollY) + 1 >= document.body.offsetHeight ) {
-                    this.postStore.loadNextPage()
+                if (this.tabStore.tab == 'posts') {
+                    if ( window.innerHeight + Math.round(window.scrollY) + 1 >= document.body.offsetHeight ) {
+                        this.postStore.loadNextPage()
+                    }
                 }
 
             }
@@ -55,13 +56,13 @@
 
         <div class="tabs"> <!--реализация без роутинга и v-if, v-show -->
             <div class="tab-item posts" :class="{active: tabStore.tab == 'posts'}">
-                <h3>Посты</h3> 
+                <h3 class="tab-header">Посты</h3> 
 
                 <Posts :mode="tabStore.tab"/>
             </div>
 
             <div class="tab-item users" :class="{active: tabStore.tab == 'users'}">
-                <h3>Пользователи</h3>
+                <h3 class="tab-header">Пользователи</h3>
 
                 <Users :mode="'users-list'"/>
             </div>
@@ -88,13 +89,29 @@
         
 
         .tabs-buttons {
-            .item.active {
-                border-color: blue;
+            position: fixed;
+            background-color: bisque;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+
+
+            .item {
                 transition: border-color 0.5s;
+                margin-right: 1rem;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+            .item.active {
+                border-color: #fff;
+                
             }
         }
 
         .tabs {
+            margin-top: 6rem;
             max-width: 40rem;
 
             
@@ -103,10 +120,16 @@
                 display: none;
                 flex-direction: column;
                 align-items: center;
-                
+
 
                 &.active {
                     display: flex;
+                }
+
+
+                .tab-header {
+                    font-size: 2rem;
+                    margin-bottom: 2rem;
                 }
             }
         }

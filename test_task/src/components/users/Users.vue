@@ -1,6 +1,6 @@
 <script setup>
 import {useUserStore} from '../../stores/userStore';
-import Loading from '../Loading.vue';
+
 import ItemUser from './ItemUser.vue';
 
 </script>

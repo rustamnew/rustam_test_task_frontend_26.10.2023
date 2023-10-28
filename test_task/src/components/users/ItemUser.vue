@@ -20,7 +20,9 @@
 
     <div class="user-item" v-if="mode == 'user-list-item'">
 
-        <h5 class="name"> {{ name }} {{ id }}</h5>
+        <h5 class="name"> 
+            <a :href="`https://jsonplaceholder.typicode.com/users/${id}`" target="_blank" > {{ name }}</a>  
+        </h5>
 
         <p class="text"> {{ body }}</p>
         <div class="preview">
@@ -42,19 +44,12 @@
             email: String,
             companyName: String,
             id: Number,
-
             mode: String
         },
         data() {
             let tabStore = useTabStore()
             let userStore = useUserStore()
             let postStore = usePostStore()
-
-
-
-                //this.name = userStore.users[]
-                
-                
 
             return {
                 tabStore,
@@ -67,22 +62,11 @@
             return { user }
         },
 
-        beforeMount() {
-            /*if (Number(this.id)) {
-                this.user = this.userStore.users.find((obj) => obj.id == this.id);
-            }*/
-            
-        },
-        onMounted() {
-            console.log(user.name)
-        },
-
         methods: {
             viewUserPosts(user_id) {
                 this.tabStore.tab = 'posts'
+                this.userStore.id_user_showed_posts = user_id
                 this.userStore.show_user_posts = true
-
-                console.log(user_id)
                 this.postStore.loadUserPosts(user_id)
                 
             }
@@ -91,24 +75,21 @@
 </script>
 
 <style scoped lang="scss">
-.user-item {
-        
-}
 
 .user-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    background-color: #fff;
     border: 1px solid rgb(153, 153, 153);
 
     margin-bottom: 1.5rem;
     padding: 0.5rem;
 
 
-    .title {
+    .name {
         font-size: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     .preview {
@@ -129,14 +110,17 @@
 
 .post-author-user {
     display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
 
-    .preview {
-        height: 4rem;
-        width: 4rem;
+    .author-subtitle {
+        margin-right: 0.3rem;
+    }
+    .name {
+        font-size: 1rem;
 
-        img {
-            width: 100%;
-            height: 100%;
+        a {
+            
         }
     }
 }

@@ -32,15 +32,17 @@ export const useCommentStore = defineStore('comment', {
             });
         },
 
-        async addCommentToPost(post_id) {
+        async addCommentToPost(post_id, obj) {
             console.log(post_id)
+            console.log(obj)
+
             await fetch('https://jsonplaceholder.typicode.com/comments', {
                 method: 'POST',
                 body: JSON.stringify({
                     postId: post_id,
-                    name: 'foo',
-                    body: 'bar',
-                    email: 'mail@email.com',
+                    name: obj.name_input_value,
+                    email: obj.email_input_value,
+                    body: obj.text_input_value,
                 }),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',

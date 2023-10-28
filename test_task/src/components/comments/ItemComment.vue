@@ -7,6 +7,7 @@ import {useCommentStore} from '../../stores/commentStore'
     
 <div class="comment-item" v-if="mode == 'post-comment'">
     <div class="author-name"><span class="subtitle">Имя: </span>{{ name }}</div>
+    <div class="author-name"><span class="subtitle">email: </span>{{ email }}</div>
     <div class="comment-text"><span class="subtitle">Комментарий: </span>{{ body }}</div>
 
 </div>
@@ -50,14 +51,16 @@ import {useCommentStore} from '../../stores/commentStore'
         margin-bottom: 1rem;
         background-color: #fff;
 
+        .subtitle {
+            font-size: 0.8rem;
+        }
         .author-name {
             font-size: 1rem;
             margin-bottom: 0.5rem;
         }
 
         .comment-text {
-            font-size: 0.8rem;
-            font-weight: 400;
+
         }
     }
 </style>

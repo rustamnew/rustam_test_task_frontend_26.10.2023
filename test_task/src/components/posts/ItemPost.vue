@@ -29,9 +29,6 @@
         <Comments :post_id="id" :mode="'post-comments'"/>
     </div>
 
-    <div class="add-comment">
-        <AddComment :post_id="id"/>
-    </div>
 </div>
     
     
@@ -69,6 +66,7 @@
         .title {
             font-size: 1rem;
             margin-bottom: 1rem;
+            width: 100%;
         }
 
         .preview {
@@ -91,6 +89,12 @@
         .text {
             font-size: 0.7rem;
             margin-bottom: 1rem;
+        }
+
+        .add-comment {
+            width: 100%;
+
+            
         }
     }
 </style>
